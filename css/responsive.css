@@ -127,6 +127,11 @@
     .site-footer-bottom {
       margin-top: 50px;
     }
+
+    .modal-dialog-scrollable .modal-content {
+      width: 100vw;
+      height: 100vh;
+    }
   }
 
   @media (min-width: 768px) and (max-width: 991px) {
@@ -136,6 +141,8 @@
     .industries .item {
       width: calc(33.33vw - 30px);
     }
+
+    
   }
 
   @media (min-width: 576px) and (max-width: 767px) {
