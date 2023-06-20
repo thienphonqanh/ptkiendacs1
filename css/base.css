@@ -120,6 +120,10 @@ strong {
   font-family: 'League Spartan', sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 /* Subnav animation */
 @keyframes floatIn {
   from {
@@ -147,5 +151,13 @@ strong {
   }
   100% {
       transform: rotate(1turn);
+  }
+}
+
+@keyframes float {
+  from {
+      transform: translate(-50%, 100%);
+  } to {
+      transform: translate(-50%, -50%);
   }
 }

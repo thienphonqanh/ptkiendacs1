@@ -1,25 +1,11 @@
-
-
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
-const btnNextIndustries = $('.section-key-industries .direction #next')
-const btnPrevIndustries = $('.section-key-industries .direction #prev')
-
-btnNextIndustries.onclick = function() {
-    const widthItem = $('.industries .item').offsetWidth;
-    $('.industries-block').scrollLeft += widthItem
-}
-
-
-btnPrevIndustries.onclick = function() {
-    const widthItem = $('.industries .item').offsetWidth;
-    $('.industries-block').scrollLeft -= widthItem
-}
 
 var thisPage = 1
-var limitPage = 5
+var limitPage = 6
 var listJobItem = $$('.list-job .job-thumb')
+
 
 function loadJobItem() {
     let beginJobIndex = limitPage * (thisPage - 1)
@@ -74,49 +60,102 @@ function changePage(i) {
 }
 
 
-const btnHandBook = $('.btn-loadHandBook')
-const handbooks = $$('.handbook-block .handbook')
+// const btnHandBook = $('.btn-loadHandBook')
+// const handbooks = $$('.handbook-block .handbook')
 
-let handbookIndex = 3
+// let handbookIndex = 3
 
-function loadMoreHandBook(mediaRes) {
-    if (mediaRes.matches) { // So khớp
-        handbookIndex = 2
-        btnHandBook.onclick = function() {
-            this.innerHTML = '<div class="loader"></div>'
-            setTimeout(() => {
-                for (var i = handbookIndex; i < handbookIndex + 2; i++) {
-                    if (handbooks[i]) {
-                        handbooks[i].style.display = 'block'
-                        btnHandBook.innerHTML = 'Xem thêm cẩm nang nghề nghiệp'
-                    }
-                }
-                handbookIndex += 2
-                if (handbookIndex >= handbooks.length) {
-                    btnHandBook.style.display = 'none'
-                }
-            }, 1000)
-        } 
-    } else {
-        btnHandBook.onclick = function() {
-            this.innerHTML = '<div class="loader"></div>'
-            setTimeout(() => {
-                for (var i = handbookIndex; i < handbookIndex + 3; i++) {
-                    if (handbooks[i]) {
-                        handbooks[i].style.display = 'block'
-                        btnHandBook.innerHTML = 'Xem thêm cẩm nang nghề nghiệp'
-                    }
-                }
-                handbookIndex += 3
-                if (handbookIndex >= handbooks.length) {
-                    btnHandBook.style.display = 'none'
-                }
-            }, 1000)
-        } 
-    }
-}
+// function loadMoreHandBook(mediaRes) {
+//     if (mediaRes.matches) { // So khớp
+//         handbookIndex = 2
+//         btnHandBook.onclick = function() {
+//             this.innerHTML = '<div class="loader"></div>'
+//             setTimeout(() => {
+//                 for (var i = handbookIndex; i < handbookIndex + 2; i++) {
+//                     if (handbooks[i]) {
+//                         handbooks[i].style.display = 'block'
+//                         btnHandBook.innerHTML = 'Xem thêm cẩm nang nghề nghiệp'
+//                     }
+//                 }
+//                 handbookIndex += 2
+//                 if (handbookIndex >= handbooks.length) {
+//                     btnHandBook.style.display = 'none'
+//                 }
+//             }, 1000)
+//         } 
+//     } else {
+//         btnHandBook.onclick = function() {
+//             this.innerHTML = '<div class="loader"></div>'
+//             setTimeout(() => {
+//                 for (var i = handbookIndex; i < handbookIndex + 3; i++) {
+//                     if (handbooks[i]) {
+//                         handbooks[i].style.display = 'block'
+//                         btnHandBook.innerHTML = 'Xem thêm cẩm nang nghề nghiệp'
+//                     }
+//                 }
+//                 handbookIndex += 3
+//                 if (handbookIndex >= handbooks.length) {
+//                     btnHandBook.style.display = 'none'
+//                 }
+//             }, 1000)
+//         } 
+//     }
+// }
   
 
-const mediaRes = window.matchMedia("(max-width: 991px)")
-loadMoreHandBook(mediaRes)
-mediaRes.addListener(loadMoreHandBook)
+// const mediaRes = window.matchMedia("(max-width: 991px)")
+// loadMoreHandBook(mediaRes)
+// mediaRes.addListener(loadMoreHandBook)
+
+// const btnNextIndustries = $('.section-key-industries .direction #next')
+// const btnPrevIndustries = $('.section-key-industries .direction #prev')
+
+// btnNextIndustries.onclick = function() {
+//     const widthItem = $('.industries .item').offsetWidth;
+//     $('.industries-block').scrollLeft += widthItem
+// }
+
+
+// btnPrevIndustries.onclick = function() {
+//     const widthItem = $('.industries .item').offsetWidth;
+//     $('.industries-block').scrollLeft -= widthItem
+// }
+
+
+
+// // var btn1 = $('.btn1')
+// // var btn2 = $('.btn2')
+// // var btnModalClose = $('.btn-close-modal')
+// // var page1 = $('.page-1')
+// // var page2 = $('.page-2')
+
+// // console.log(btnModalClose)
+
+
+// // btn2.onclick = function() {
+// //     page2.classList.add('open')
+// //     btnModalClose.onclick = function() {
+// //         page2.classList.remove('open')
+// //     }
+// // }
+
+// // btn1.onclick = function() {
+// //     page1.classList.add('open')
+// //     btnModalClose.onclick = function() {
+// //         page1.classList.remove('open')
+// //     }
+// // }
+
+var btnDetails = $$('.btn-details')
+var contentPage = $$('.page-content')
+var btnModalClose = $('.btn-close-modal')
+
+btnDetails.forEach((btnDetail, index) => {
+    btnDetail.onclick = function() {
+        contentPage[index].classList.add('open')
+        btnModalClose.onclick = function() {
+            contentPage[index].classList.remove('open')
+        }
+    }
+    
+})
