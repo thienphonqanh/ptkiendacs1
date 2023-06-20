@@ -785,15 +785,7 @@
   .youtube-icon:hover {
     color: var(--white-color);
   }
-  
-  @keyframes pulse-animation {
-    0% {
-      box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
-    }
-    100% {
-      box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
-    }
-  }
+
   
   
   /*---------------------------------------
@@ -838,58 +830,165 @@
   }
   
   
-  /*---------------------------------------
-    CATEGORIES              
-  -----------------------------------------*/
-  .categories-block {
-    background: var(--primary-color);
-    border-radius: var(--border-radius-large);
-    border: 8px solid var(--social-icon-link-bg-color);
-    width: 150px;
-    height: 150px;
-    margin: auto;
-    margin-bottom: 24px;
-    text-align: center;
-    position: relative;
-    transition: all 0.5s;
+/*--------------------
+    Ngành trọng điểm       
+  --------------------*/
+
+.section-key-industries {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: var(--white-color);
+  position: relative;
+}
+
+.direction {
+  text-align: center;
+}
+
+.direction button {
+  font-weight: var(--font-weight-bold);
+  background-color: var(--section-bg-color);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: 0.4s ease;
+  margin: 0 10px;
+  border: none;
+  position: absolute;
+  border: none;
+}
+
+.direction button:hover {
+  background-color: var(--custom-section-color);
+}
+
+.direction button:nth-child(1) {
+  top: 50%;
+  left: 2%;
+}
+
+.direction button:nth-child(2) {
+  top: 50%;
+  right: 2%;
+}
+
+.direction button i {
+  line-height: 30px;
+}
+
+.industries-block {
+  width: 1250px;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 20px auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: both;
+}
+
+.industries {
+  display: flex;
+  width: max-content;
+}
+
+.industries .item {
+  background-color: var(--section-bg-color);
+  width: 220px;
+  height: 200px;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+  border-radius: var(--border-radius-small);
+  scroll-snap-align: start;
+}
+
+.industries .item img {
+  width: 72px;
+  height: 72px;
+}
+
+.industries .item p {
+  margin: 0;
+  padding: 12px 3px;
+  color: var(--dark-color);
+  transition: 0.3s ease;
+}
+
+.industries .item:hover p {
+  color: var(--custom-btn-bg-color);
+  transition: 0.3s ease;
+}
+
+
+/*----------
+  Cẩm nang    
+  ----------*/
+  .section-handbook {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: var(--white-color);
   }
   
-  .categories-block:hover {
-    border-color: var(--white-color);
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+  .handbook-block {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 30px;
+    flex-wrap: wrap;
   }
   
-  .categories-icon {
-    color: var(--white-color);
-    font-size: var(--h4-font-size);
-    line-height: normal;
-    margin-bottom: 5px;
+  .handbook {
+    background-color: var(--white-color);
+    width: 30%;
+    padding: 12px;
+    display: none;
+    margin-top: 30px;
   }
   
-  .categories-block-title {
-    color: var(--white-color);
-    font-size: var(--copyright-font-size);
-  }
-  
-  .categories-block-number {
-    background: var(--secondary-color);
-    border-radius: var(--border-radius-large);
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-  }
-  
-  .categories-block-number-text {
-    color: var(--white-color);
+  .handbook:nth-child(1),
+  .handbook:nth-child(2),
+  .handbook:nth-child(3) {
     display: block;
-    height: 45%;
-    position: relative;
-    left: 2px;
   }
   
+  .handbook p {
+    margin: 0;
+    padding: 12px 0;
+    font-weight: var(--font-weight-bold);
+  }
+  
+  .handbook:hover {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    cursor: pointer;
+  }
+  
+  .section-handbook .btn-loadHandBook {
+    display: block;
+    margin: 40px auto;
+    color: var(--primary-color);
+    padding: 8px 22px;
+    font-weight: var(--font-weight-bold);
+    outline: none;
+    border: none;
+    background-color: var(--section-bg-color);
+  }
+  
+  .section-handbook .btn-loadHandBook:hover {
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+  }
+  
+  .loader {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: var(--secondary-color);
+    animation: spinner 1s ease infinite;
+  }
   
   /*---------------------------------------
     REVIEWS              
@@ -972,182 +1071,246 @@
   /*---------------------------------------
     JOB              
   -----------------------------------------*/
-  .recent-jobs-bottom .custom-btn {
-    font-size: var(--h5-font-size);
-    padding: 25px 50px;
-  }
   
-  .job-listings-page .hero-form .badge:hover {
-    background: var(--primary-color);
-  }
-  
-  .job-thumb {
-    border-radius: var(--border-radius-small);
-    margin-bottom: 25px;
-    padding: 25px;
-    transition: all 0.5s ease;
-  }
-  
-  .job-thumb:hover,
-  .job-thumb:nth-of-type(even) {
-    background: var(--white-color);
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
-  }
-  
-  .job-title-link {
-    color: var(--dark-color);
-  }
-  
-  .job-thumb p {
-    font-size: 18px;
-  }
-  
-  .job-thumb .badge {
-    border: 0;
-  }
-  
-  .job-thumb-box {
-    border: 1px solid var(--border-color);
-    position: relative;
-    overflow: hidden;
-    max-width: 400px;
-    margin-bottom: 48px;
-    padding: 0;
-  }
-  
-  .job-thumb-box .job-body {
-    padding: 25px;
-  }
-  
-  .job-thumb-box .job-body .job-image-wrap {
-    width: 50px;
-    min-width: 50px;
-    height: 50px;
-  }
-  
-  .job-thumb-box .job-body .job-image {
-    padding: 10px;
-  }
-  
-  .job-thumb-box .job-location, 
-  .job-thumb-box .job-date {
-    min-width: inherit;
-  }
-  
-  .job-thumb-box .job-date {
-    margin-right: 0;
-  }
-  
-  .job-image-box-wrap {
-    position: relative;
-  }
-  
-  .job-image-box-wrap .job-image {
-    padding: 0;
-  }
-  
-  .job-image-box-wrap .badge-level {
-    border-color: transparent;
-  }
-  
-  .job-image-box-wrap .badge-level:hover,
-  .job-image-box-wrap .badge:hover {
-    background: var(--custom-btn-bg-color);
-    border-color: transparent;
-  }
-  
-  .job-image-box-wrap-info {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: 20px 25px;
-  }
-  
-  .job-image-wrap {
-    border-radius: var(--border-radius-large);
-    width: 80px;
-    min-width: 80px;
-    height: 80px;
-  }
-  
-  .job-image {
-    display: block;
-    margin: auto;
-    padding: 20px;
-  }
-  
-  .job-body {
-    flex: auto;
-  }
-  
-  .job-location {
-    min-width: 175px;
-  }
-  
-  .job-location,
-  .job-date {
-    margin-right: 20px;
-  }
-  
-  .job-date {
-    min-width: 155px;
-  }
-  
-  .job-price {
-    min-width: 120px;
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-  
-  .job-thumb-detail,
-  .job-thumb-detail:hover {
-    background: transparent;
-    box-shadow: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .job-thumb-detail-box {
-    padding: 40px;
-  }
-  
-  .job-detail-share {
-    margin-left: auto;
-  }
-  
-  .dropdown-sorting .dropdown-menu {
-    border-radius: var(--border-radius-small);
-    border-top: 0;
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
-  
-  .dropdown-sorting .dropdown-item {
-    font-size: var(--copyright-font-size);
-    border-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  
-  #dropdownSortingButton {
-    background: transparent;
-    color: var(--dark-color);
-    border: 0;
-    padding: 0;
-  }
-  
-  .sorting-icon {
-    color: var(--p-color);
-  }
-  
-  .sorting-icon.active {
-    color: var(--primary-color);
-  }
-  
-  .job-section-btn-wrap {
-    margin-left: auto;
-  }
+/*--------------------
+  Danh sách việc làm       
+  --------------------*/
+.section-job {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: var(--section-color);
+}
+.recent-jobs-bottom .custom-btn {
+  font-size: var(--h5-font-size);
+  padding: 25px 50px;
+}
+
+.job-listings-page .hero-form .badge:hover {
+  background: var(--primary-color);
+}
+
+.list-job {
+  list-style: none;
+}
+
+.list-job li:hover,
+.list-job li:nth-child(even) {
+  background: var(--white-color);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  cursor: pointer;
+}
+
+.job-thumb {
+  border-radius: var(--border-radius-small);
+  margin-bottom: 25px;
+  padding: 25px;
+  transition: all 0.5s ease;
+  margin: 0px 68px 25px;
+  display: flex;
+}
+
+.job-title-link {
+  color: var(--dark-color);
+}
+
+.job-thumb p {
+  font-size: 18px;
+}
+
+.job-thumb .badge {
+  border: 0;
+}
+
+.job-thumb-box {
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+  max-width: 400px;
+  margin-bottom: 48px;
+  padding: 0;
+}
+
+.job-thumb-box .job-body {
+  padding: 25px;
+}
+
+.job-thumb-box .job-body .job-image-wrap {
+  width: 50px;
+  min-width: 50px;
+  height: 50px;
+}
+
+.job-thumb-box .job-body .job-image {
+  padding: 10px;
+}
+
+.job-thumb-box .job-location,
+.job-thumb-box .job-date {
+  min-width: inherit;
+}
+
+.job-thumb-box .job-date {
+  margin-right: 0;
+}
+
+.job-image-box-wrap {
+  position: relative;
+}
+
+.job-image-box-wrap .job-image {
+  padding: 0;
+}
+
+.job-image-box-wrap .badge-level {
+  border-color: transparent;
+}
+
+.job-image-box-wrap .badge-level:hover,
+.job-image-box-wrap .badge:hover {
+  background: var(--custom-btn-bg-color);
+  border-color: transparent;
+}
+
+.job-image-box-wrap-info {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 20px 25px;
+}
+
+.job-image-wrap {
+  border-radius: var(--border-radius-large);
+  width: 80px;
+  min-width: 80px;
+  height: 80px;
+  display: grid;
+  place-content: center;
+  padding: 0 8px;
+}
+
+.job-image {
+  display: block;
+  margin: auto;
+  width: 80%;
+}
+
+.job-body {
+  flex: auto;
+}
+
+.job-location {
+  min-width: 175px;
+}
+
+.job-location,
+.job-date {
+  margin-right: 20px;
+}
+
+.job-date {
+  min-width: 155px;
+}
+
+.job-price {
+  min-width: 120px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.job-thumb-detail,
+.job-thumb-detail:hover {
+  background: transparent;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+.job-thumb-detail-box {
+  padding: 40px;
+}
+
+.job-detail-share {
+  margin-left: auto;
+}
+
+.dropdown-sorting .dropdown-menu {
+  border-radius: var(--border-radius-small);
+  border-top: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.dropdown-sorting .dropdown-item {
+  font-size: var(--copyright-font-size);
+  border-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#dropdownSortingButton {
+  background: transparent;
+  color: var(--dark-color);
+  border: 0;
+  padding: 0;
+}
+
+.sorting-icon {
+  color: var(--p-color);
+}
+
+.sorting-icon.active {
+  color: var(--primary-color);
+}
+
+.job-section-btn-wrap {
+  margin-left: auto;
+}
+
+.btn-details {
+  background-color: var(--custom-btn-bg-color);
+  padding: 16px 22px;
+  color: var(--white-color);
+  border-radius: var(--border-radius-large);
+}
+
+.btn-details:hover {
+  color: var(--white-color);
+  background-color: var(--secondary-color);
+}
+
+.paging {
+  width: 100%;
+  height: auto;
+}
+
+.list-page {
+  margin: auto;
+  width: 40%;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.list-page li {
+  border-radius: 50%;
+  background-color: var(--white-color);
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  font-size: 12px;
+  color: var(--dark-color);
+  transition: 0.4s ease;
+  margin: 12px;
+}
+
+.list-page li:hover,
+.list-page li.active {
+  background-color: var(--secondary-color);
+  cursor: pointer;
+  color: var(--white-color);
+}
   
   
   /*---------------------------------------
@@ -1365,186 +1528,6 @@
     background: var(--secondary-color);
     color: var(--white-color);
     transform: scale(1.15);
-  }
-  
-  
-  /*---------------------------------------
-    RESPONSIVE STYLES               
-  -----------------------------------------*/
-  @media screen and (min-width: 1025px) {
-    .job-featured-section .job-thumb {
-      max-width: 1120px;
-      margin-right: auto;
-      margin-left: auto;
-    }
-  }
-  
-  @media screen and (min-width: 991px) {
-    .google-map {
-      height: 100%;
-    }
-  }
-  
-  @media screen and (max-width: 991px) {
-    h1 {
-      font-size: 48px;
-    }
-  
-    h2 {
-      font-size: 36px;
-    }
-  
-    h3 {
-      font-size: 32px;
-    }
-  
-    h4 {
-      font-size: 28px;
-    }
-  
-    h5 {
-      font-size: 20px;
-    }
-  
-    h6 {
-      font-size: 18px;
-    }
-  
-    .section-padding,
-    .cta-section {
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
-  
-    .about-page .about-section {
-      padding-top: 50px;
-    }
-  
-    .custom-btn {
-      padding: 12px 20px;
-    }
-  
-    .navbar-collapse {
-      padding-bottom: 20px;
-    }
-  
-    .navbar-expand-lg .navbar-nav .nav-link {
-      padding: 10px;
-    }
-  
-    .navbar-expand-lg .navbar-nav .nav-link.custom-btn {
-      margin-top: 10px;
-    }
-  
-    .page-link {
-      font-size: 12px;
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
-      margin-right: 5px;
-      margin-left: 5px;
-    }
-  
-    .custom-text-block {
-      padding: 50px 30px;
-    }
-  
-    .hero-section {
-      padding-top: 100px;
-      padding-bottom: 100px;
-    }
-  
-    .badge {
-      margin-top: 5px;
-    }
-  
-    .counter-number, 
-    .counter-number-text {
-      font-size: var(--h2-font-size);
-    }
-  
-    .custom-border-radius-start {
-      border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
-    }
-  
-    .custom-border-radius-end {
-      border-radius: 0 0 var(--border-radius-medium) var(--border-radius-medium);
-    }
-  
-    .job-body p {
-      font-size: var(--btn-font-size);
-    }
-  
-    .job-location {
-      min-width: 140px;
-    }
-  
-    .job-price {
-      min-width: inherit;
-      margin-top: 5px;
-      margin-left: 0;
-    }
-  
-    .hero-form button[type="submit"] {
-      margin-bottom: 0;
-    }
-  
-    .site-footer {
-      padding-top: 50px;
-    }
-  
-    .site-footer-bottom {
-      margin-top: 50px;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    h1 {
-      font-size: 40px;
-    }
-  
-    h2 {
-      font-size: 28px;
-    }
-  
-    h3 {
-      font-size: 26px;
-    }
-  
-    h4 {
-      font-size: 22px;
-    }
-  
-    h5 {
-      font-size: 20px;
-    }
-  
-    .badge {
-      margin: 10px 10px 5px 0;
-    }
-  
-    .page-link {
-      width: 35px;
-      height: 35px;
-      line-height: 35px;
-    }
-  
-    .counter-thumb {
-      margin: 10px;
-    }
-  
-    .counter-number, 
-    .counter-number-text {
-      font-size: var(--h3-font-size);
-    }
-  
-    .job-date {
-      margin-top: 5px;
-    }
-  
-    .job-detail-share {
-      margin: 20px auto 0 auto;
-    }
   }
   
   
