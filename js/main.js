@@ -75,8 +75,10 @@ btnDetails.forEach((btnDetail, index) => {
 
 
 
-const btnHandBook = $('.btn-loadHandBook')
-const handbooks = $$('.handbook-block .handbook')
+
+
+var btnHandBook = $('.btn-loadHandBook')
+var handbooks = $$('.handbook-block .handbook')
 
 let handbookIndex = 3
 
@@ -121,6 +123,23 @@ function loadMoreHandBook(mediaRes) {
 const mediaRes = window.matchMedia("(max-width: 991px)")
 loadMoreHandBook(mediaRes)
 mediaRes.addListener(loadMoreHandBook)
+
+
+
+var handbookContent = $$('.handbook-content')
+
+handbooks.forEach((handbook, index) => {
+    handbook.onclick = function() {
+        handbookContent[index].classList.add('open')
+        btnModalClose.onclick = function() {
+            handbookContent[index].classList.remove('open')
+        }
+    }
+})
+
+
+
+
 
 const btnNextIndustries = $('.section-key-industries .direction #next')
 const btnPrevIndustries = $('.section-key-industries .direction #prev')

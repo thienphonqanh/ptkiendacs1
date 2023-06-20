@@ -960,6 +960,14 @@
     font-weight: var(--font-weight-bold);
   }
   
+  .handbook-content {
+    display: none;
+  }
+
+  .handbook-content.open {
+    display: block;
+  }
+
   .handbook:hover {
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
     cursor: pointer;
