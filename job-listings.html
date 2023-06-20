@@ -38,6 +38,7 @@
     
     <body class="job-listings-page" id="top">
 
+        <!-- Thanh header -->
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
@@ -66,17 +67,17 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="job-listings.html">Danh sách việc làm</a>
                         </li>
-                        
+
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Liên hệ</a>
                         </li>
 
                         <li class="nav-item ms-lg-auto">
-                            <a class="nav-link" href="#">Đăng ký</a>
+                            <a class="nav-link" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Đăng ký</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link custom-btn btn" href="#">Đăng nhập</a>
+                            <a class="nav-link custom-btn btn" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Đăng nhập</a>
                         </li>
                     </ul>
                 </div>
@@ -1128,6 +1129,90 @@
             </div>
         </footer>
 
+         <!-- Modal login -->
+         <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Đăng nhập để tiếp tục</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" class="form-group">
+                        <div class="login-flatform d-flex justify-content-center">
+                            <a href="https://www.google.com" type="button"">
+                                <img src="./images/logos/google.png" class="img-fluid" alt="">
+                                <span class="px-2">với tài khoản google</span>
+                            </a>
+                            <a href="https://www.facebook.com" type="button"">
+                                <img src="./images/logos/Facebook_Logo_(2019).png.webp" class="img-fluid" alt="">
+                                <span class="px-2">với tài khoản google</span>
+                            </a>
+                        </div>
+                        <p class="text-center text-dark border-top mt-2 pt-2">hoặc đăng nhập bằng email</p>
+                        <div class="inp-email d-flex flex-column">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" placeholder="Tên đăng nhập hoặc email" required>
+                        </div>
+                        <div class="inp-password d-flex flex-column">
+                            <label for="password">Mật khẩu</label>
+                            <input type="password" name="password" id="password" placeholder="Mật khẩu" required>
+                        </div>
+                        <div class="forgot-password text-end">
+                            <a href="#">Quên mật khẩu?</a>
+                        </div>
+                        <button class="btn-login">Đăng nhập</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <span>Chưa có tài khoản? </span>
+                    <a class="text-primary" type="button" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Đăng ký</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Đăng ký thành viên</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" class="form-group">
+                        <div class="login-flatform d-flex justify-content-center">
+                            <a href="https://www.google.com" type="button"">
+                                <img src="./images/logos/google.png" class="img-fluid" alt="">
+                                <span class="px-2">với tài khoản google</span>
+                            </a>
+                            <a href="https://www.facebook.com" type="button"">
+                                <img src="./images/logos/Facebook_Logo_(2019).png.webp" class="img-fluid" alt="">
+                                <span class="px-2">với tài khoản google</span>
+                            </a>
+                        </div>
+                        <p class="text-center text-dark border-top mt-2 pt-2">hoặc đăng ký bằng email</p>
+                        <div class="inp-email d-flex flex-column">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" placeholder="Tên đăng nhập hoặc email" required>
+                        </div>
+                        <div class="inp-password d-flex flex-column">
+                            <label for="password">Mật khẩu</label>
+                            <input type="password" name="password" id="password" placeholder="Mật khẩu" required>
+                        </div>
+                        <div class="re-password d-flex flex-column">
+                            <label for="password">Nhập lại mật khẩu</label>
+                            <input type="password" name="password" id="password" placeholder="Nhập lại mật khẩu" required>
+                        </div>
+                        <button class="btn-login">Đăng ký</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <span>Đã có tài khoản?</span>
+                    <a class="text-primary" type="button" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Đăng nhập</a>
+                </div>
+              </div>
+            </div>
+        </div>
          
         <!-- Modal -->
         <div class="modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

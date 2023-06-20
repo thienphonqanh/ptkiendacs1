@@ -132,6 +132,11 @@
       width: 100vw;
       height: 100vh;
     }
+
+    #exampleModalToggle .modal-content,
+    #exampleModalToggle2 .modal-content {
+      height: 100vh;
+    }
   }
 
   @media (min-width: 768px) and (max-width: 991px) {
@@ -152,6 +157,7 @@
     .industries .item {
       width: calc(50vw - 30px);
     }
+    
   }
   
   @media screen and (max-width: 480px) {
@@ -237,7 +243,7 @@
     .handbook:nth-child(3) {
       display: none;
     }
-
+    
 
   }
   
